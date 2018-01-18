@@ -8,3 +8,5 @@ Unity. Przepisy na interfejs gry  https://helion.pl/ksiazki/unity-przepisy-na-in
 
 Unity. Przewodnik projektanta gier  https://helion.pl/ksiazki/unity-przewodnik-projektanta-gier-mike-geig,unippg.htm#format/d
 
+Unity3D 5 | Kurs 7 cz.1 - tworzenie głównego menu UI  https://www.youtube.com/watch?v=Q8c7SCnYBd8
+
