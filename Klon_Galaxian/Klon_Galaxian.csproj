@@ -222,6 +222,7 @@
     <Compile Include="Assets\Skrypty\GraczController.cs" />
     <Compile Include="Assets\Skrypty\GraKontroler.cs" />
     <Compile Include="Assets\Skrypty\Losowyobrot.cs" />
+    <Compile Include="Assets\Skrypty\Menu.cs" />
     <Compile Include="Assets\Skrypty\Mover.cs" />
     <Compile Include="Assets\Skrypty\UsunPrzezCzas.cs" />
     <Compile Include="Assets\Skrypty\ZniszczPrzezGranica.cs" />
