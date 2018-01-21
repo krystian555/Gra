@@ -33,6 +33,7 @@ public class ZniszczPrzezKontakt : MonoBehaviour {
         if (other.tag == "Gracz")
         {
             Instantiate(eksplozjaGracza, other.transform.position, other.transform.rotation);
+            graKontroler.GameOver();
         }
        graKontroler.DodajWartosc(wynik);
         Destroy(other.gameObject);

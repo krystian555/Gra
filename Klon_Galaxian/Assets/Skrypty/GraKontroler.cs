@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GraKontroler : MonoBehaviour
 {
@@ -14,13 +15,34 @@ public class GraKontroler : MonoBehaviour
     public float waveWait;
     public Text wyniki;
     private int punkt;
+
+    public Text wzowienie;
+    public Text zakoncz;
+    private bool gameOver;
+    private bool restart;
+
     void Start()
     {
-      // wyniki = GetComponent<Text>();
+        // wyniki = GetComponent<Text>();
+        gameOver = false;
+        restart = false;
+        wzowienie.text = "";
+        zakoncz.text = "";
         punkt = 0;
        AktualizujWynik();
         StartCoroutine(SpawnWaves());
         //SpawnWaves();
+    }
+
+    void Update()
+    {
+        if (restart)
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+        }
     }
 
     IEnumerator SpawnWaves()
@@ -37,6 +59,13 @@ public class GraKontroler : MonoBehaviour
                 yield return new WaitForSeconds(spawnWait);
             }
             yield return new WaitForSeconds(waveWait);
+
+            if (gameOver)
+            {
+                wzowienie.text = "Wznów R";
+                restart = true;
+                break;
+            }
         }
     }
     public void DodajWartosc(int nowaWartosc)
@@ -49,5 +78,11 @@ public class GraKontroler : MonoBehaviour
         wyniki.text = "Wynik: " + punkt.ToString();
     }
 
-   
+    public void GameOver()
+    {
+        zakoncz.text = "Koniec Gry!";
+        gameOver = true;
+    }
+
+
 }
