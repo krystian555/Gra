@@ -20,6 +20,7 @@ public class Menu : MonoBehaviour {
         MenuExit.enabled = false; 
         Cursor.visible = manuUI.enabled;
         Cursor.lockState = CursorLockMode.Confined;
+       
     }
 
   

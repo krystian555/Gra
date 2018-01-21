@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GraKontroler : MonoBehaviour
 {
@@ -11,8 +12,13 @@ public class GraKontroler : MonoBehaviour
     public float spawnWait;
     public float startWait;
     public float waveWait;
+    public Text wyniki;
+    private int punkt;
     void Start()
     {
+      // wyniki = GetComponent<Text>();
+        punkt = 0;
+       AktualizujWynik();
         StartCoroutine(SpawnWaves());
         //SpawnWaves();
     }
@@ -33,4 +39,15 @@ public class GraKontroler : MonoBehaviour
             yield return new WaitForSeconds(waveWait);
         }
     }
+    public void DodajWartosc(int nowaWartosc)
+    {
+        punkt += nowaWartosc;
+        AktualizujWynik();
+    }
+    void AktualizujWynik()
+    { //wyniki = GetComponent<Text>();
+        wyniki.text = "Wynik: " + punkt.ToString();
+    }
+
+   
 }
