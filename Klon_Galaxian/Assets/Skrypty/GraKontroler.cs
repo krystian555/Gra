@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GraKontroler : MonoBehaviour
 {
 
-    public GameObject hazard;
+    public GameObject[] hazards;
     public Vector3 spawnValues;
     public int ilosc;
     public float spawnWait;
@@ -52,7 +52,8 @@ public class GraKontroler : MonoBehaviour
         {
             for (int i = 0; i < ilosc; i++)
             {
-               // GameObject hazard;
+                // GameObject hazard;
+                GameObject hazard = hazards[Random.Range(0, hazards.Length)];
                 Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
                 Quaternion spawnRotation = Quaternion.identity;
                 Instantiate(hazard, spawnPosition, spawnRotation);
